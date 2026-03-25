@@ -46,6 +46,11 @@ resource "aws_iam_user_policy" "lb_ro" {
 resource "aws_s3_bucket" "example" {
   for_each = var.s3_buckets
   bucket   = "${random_pet.this.id}-${each.key}.id"
+
+  # provisioner "local-exec" {
+  #   command     = "echo ${aws_s3_bucket.example[each.key].id} >> s3.txt"
+  #   interpreter = ["/bib/bash", "-c"]
+  # }
 }
 
 resource "aws_s3_object" "object" {
