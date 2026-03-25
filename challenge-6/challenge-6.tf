@@ -1,18 +1,18 @@
 terraform {
   required_providers {
     aws = {
-      source = "hashicorp/aws"
+      source  = "hashicorp/aws"
       version = "5.80.0"
     }
   }
 }
 
 provider "aws" {
- region = "us-east-1"
+  region = "us-east-1"
 }
 
 resource "aws_security_group" "allow_tls" {
-  name        = "demo-firewall"
+  name = "demo-firewall"
 
 }
 
@@ -24,8 +24,8 @@ output "account_id" {
 
 
 resource "aws_iam_role" "cw_full_access" {
-  name = "CloudWatchFullAccess"
-  managed_policy_arns = ["arn:aws:iam::aws:policy/CloudWatchFullAccess"] 
+  name                = "CloudWatchFullAccess"
+  managed_policy_arns = ["arn:aws:iam::aws:policy/CloudWatchFullAccess"]
 
   assume_role_policy = jsonencode({
     Version = "2012-10-17"
