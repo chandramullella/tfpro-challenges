@@ -12,4 +12,6 @@ output "sg_id" {
   value = aws_security_group.example.id
 }
 
-# output "sg_rule_id" {}
+output "sg_rule_id" {
+  value = aws_vpc_security_group_ingress_rule.example.id
+}
