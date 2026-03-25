@@ -24,4 +24,7 @@ variable "region" {
   default = "us-east-1c"
 }
 
-# variable "sg_name" {}
+variable "sg_name" {
+  type    = string
+  default = "kplabs-sg"
+}

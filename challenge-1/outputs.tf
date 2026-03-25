@@ -7,3 +7,9 @@ output "s3_bucket_name" {
 output "iam_user_names" {
   value = aws_iam_user.lb[*].name
 }
+
+output "sg_id" {
+  value = aws_security_group.example.id
+}
+
+# output "sg_rule_id" {}
